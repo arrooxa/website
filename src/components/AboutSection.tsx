@@ -79,6 +79,7 @@ const AboutSection = () => {
               <TabButton
                 selectTab={() => handleChangeTab(id)}
                 active={tab === id}
+                key={id}
               >
                 {title}
               </TabButton>
