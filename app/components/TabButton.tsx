@@ -1,4 +1,4 @@
-import { TabButtonDTO } from "@app/app/tab";
+import { TabButtonDTO } from "@app/types/tab";
 import React from "react";
 
 const TabButton: React.FC<TabButtonDTO> = ({ active, selectTab, children }) => {

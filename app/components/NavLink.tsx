@@ -1,4 +1,4 @@
-import { LinkDTO } from "@app/app/link";
+import { LinkDTO } from "@app/types/link";
 import Link from "next/link";
 import React from "react";
 
