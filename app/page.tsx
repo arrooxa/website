@@ -1,7 +1,8 @@
-import AboutSection from "@src/components/AboutSection";
-import EmailSection from "@src/components/EmailSection";
-import HeroSection from "@src/components/HeroSection";
-import NavBar from "@src/components/NavBar";
+import AboutSection from "@app/components/AboutSection";
+import EmailSection from "@app/components/EmailSection";
+import Footer from "@app/components/Footer";
+import HeroSection from "@app/components/HeroSection";
+import NavBar from "@app/components/NavBar";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <AboutSection />
         <EmailSection />
       </div>
+      <Footer />
     </main>
   );
 }

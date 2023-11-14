@@ -1,6 +1,6 @@
 import React from "react";
 import NavLink from "./NavLink";
-import { LinkDTO } from "@src/app/types/link";
+import { LinkDTO } from "@app/app/link";
 
 const MenuOverlay: React.FC<{ links: LinkDTO[] }> = ({
   links,

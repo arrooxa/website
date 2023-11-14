@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useTransition } from "react";
 import Image from "next/image";
-import { Tabs, TabsData } from "@src/app/types/tab";
+import { Tabs, TabsData } from "@app/types/tab";
 import TabButton from "./TabButton";
 
 const tabsData: TabsData[] = [
