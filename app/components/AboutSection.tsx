@@ -3,6 +3,7 @@ import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import { Tabs, TabsData } from "@app/types/tab";
 import TabButton from "./TabButton";
+import { getAge } from "@app/utils/getAge";
 
 const tabsData: TabsData[] = [
   {
@@ -57,10 +58,10 @@ const AboutSection = () => {
   }
 
   return (
-    <section className="text-white">
+    <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-0 justify-items-center">
         <Image
-          src="/images/about-image.png"
+          src="/images/333.jpg"
           width={500}
           height={500}
           alt="About Image"
@@ -68,11 +69,16 @@ const AboutSection = () => {
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
+          <span className="mb-2">Hello there 👋</span>
           <p className="text-base md:text-lg">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet
-            libero cupiditate temporibus dolores asperiores nesciunt quos ut
-            veniam. Quisquam aliquid voluptatum earum blanditiis temporibus
-            excepturi obcaecati adipisci, iusto cupiditate aut.
+            I'm Vitor Rocha Cambuí, a 22-year-old software developer with a
+            degree in Analysis and Systems Development from the Technology
+            College of Santos. Over the past 4 years, I've focused on Web
+            Development, specializing in Javascript technologies like React.js
+            and Nest.js. In various roles, I've contributed to creating
+            solutions that enhance company revenue by building software aimed at
+            boosting productivity among collaborators and increasing lead
+            generation.
           </p>
           <div className="flex flex-row mt-8">
             {tabsData.map(({ id, title }) => (
