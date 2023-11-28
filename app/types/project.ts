@@ -8,6 +8,8 @@ interface ProjectDataDTO {
   previewUrl?: string;
 }
 
+export type ProjectTags = "All" | "Web" | "Mobile";
+
 export type ProjectCardProps = Omit<ProjectDataDTO, "id" | "tag">;
 
 interface ProjectDataDTO {
@@ -18,6 +20,12 @@ interface ProjectDataDTO {
   tag: string[];
   gitUrl: string;
   previewUrl?: string;
+}
+
+export interface ProjectTagProps {
+  title: ProjectTags;
+  onClick: (newTag: ProjectTags) => void;
+  isSelected: boolean;
 }
 
 export const projectsData: ProjectDataDTO[] = [
@@ -42,14 +50,6 @@ export const projectsData: ProjectDataDTO[] = [
     title: "Dogs",
     description: "Social Network instagram-based for Dogs",
     image: "images/dogs-project.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/arrooxa/dogs",
-  },
-  {
-    id: 3,
-    title: "Dogs",
-    description: "Social Network instagram-based for Dogs",
-    image: "#",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/arrooxa/dogs",
   },
