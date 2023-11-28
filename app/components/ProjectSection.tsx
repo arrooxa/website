@@ -3,10 +3,18 @@
 import { ProjectTags, projectsData } from "@app/types/project";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Variants, motion, useInView } from "framer-motion";
 
 const ProjectSection: React.FC = () => {
   const [tag, setTag] = useState<ProjectTags>("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const cardVariants: Variants = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+  };
 
   function handleTagChange(newTag: ProjectTags) {
     setTag(newTag);
@@ -34,19 +42,26 @@ const ProjectSection: React.FC = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData
           .filter((project) => project.tag.includes(tag))
           .map((project, index) => (
-            <ProjectCard
+            <motion.li
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
               key={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              gitUrl={project.gitUrl}
-            />
+              transition={{ duration: 0.3, delay: index * 0.3 }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                gitUrl={project.gitUrl}
+              />
+            </motion.li>
           ))}
-      </div>
+      </ul>
     </section>
   );
 };
