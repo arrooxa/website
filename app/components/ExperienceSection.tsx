@@ -8,7 +8,7 @@ const experienceData: TimelineDTO[] = [
     start: "Jul 2022",
     end: null,
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto et ducimus voluptatem corporis ipsam. Minima unde, reprehenderit quo dolore soluta, dolor recusandae, laudantium odio quam voluptatem voluptas magni reiciendis cumque?",
+      "IGC is the largest M&A (Mergers and Acquisitions) company in Latin America and a powerhouse in the global financial market, competing head-to-head with major banks. With a recently established technology sector, I contributed by training new professionals, managing teams, and developing internal CRMs that managed financial processes involving hundreds of millions of Brazilian reais.",
   },
   {
     title: "Web Developer",
@@ -16,7 +16,7 @@ const experienceData: TimelineDTO[] = [
     start: "Apr 2021",
     end: "Jun 2022",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusamus tenetur impedit hic consequuntur quia aliquid earum id ad, exercitationem quasi? Natus hic exercitationem omnis mollitia tempora consectetur consequuntur tenetur.",
+      "Haste Design was a software house combined with a design studio where all aspects of software development were solved. My role was to participate in these projects from architecture to deployment, and I learned a lot not only in coding but also in infrastructure. Unfortunately, the company has ceased its operations.",
   },
   {
     start: "Jan 2021",
@@ -24,7 +24,7 @@ const experienceData: TimelineDTO[] = [
     end: "Apr 2021",
     title: "Intern",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias perspiciatis fugit commodi necessitatibus quia possimus, ratione doloremque in blanditiis. Atque placeat at accusamus, nostrum quia necessitatibus id? Eum, excepturi!",
+      "Virtues was a mobile app development company with a focus on radio stations. I was hired to develop the company's website because it was quite outdated with outdated features. Additionally, I initiated the creation of a browser extension for radio playback",
   },
 ];
 
@@ -35,7 +35,7 @@ const educationData: TimelineDTO[] = [
     start: "Jan 2023",
     end: "Dec 2023",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusamus tenetur impedit hic consequuntur quia aliquid earum id ad, exercitationem quasi? Natus hic exercitationem omnis mollitia tempora consectetur consequuntur tenetur.",
+      "What I have learned: React.js | Microservices | Express.js | Node.js | Python",
   },
   {
     title: "Higher Technology Course",
@@ -43,7 +43,7 @@ const educationData: TimelineDTO[] = [
     start: "Jan 2020",
     end: "Dec 2022",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto et ducimus voluptatem corporis ipsam. Minima unde, reprehenderit quo dolore soluta, dolor recusandae, laudantium odio quam voluptatem voluptas magni reiciendis cumque?",
+      "What I have learned:  Data Structure | Algorithms | Object-Oriented Programming | C | Functional Programming | SQL",
   },
 ];
 

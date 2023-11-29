@@ -1,35 +1,54 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import GithubIcon from "@public/images/github-icon.svg";
 import LinkedinIcon from "@public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import sendEmail from "@app/services/sendEmail";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { EmailTemplateDTO } from "@app/types/email";
 
 const EmailSection: React.FC = () => {
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const data = {
+      email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value,
+    };
+
+    sendEmail(data);
+  };
+
   return (
-    <section
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
-      id="contact"
-    >
+    <section className="grid md:grid-cols-2 gap-4 relative" id="contact">
       <div className="hidden md:block bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-[65%] -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let's Connect!</h5>
+        <h5 className="text-xl font-bold text-white my-2">Lets Connect!</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
-          dicta qui? Vitae ipsum eos eligendi atque accusantium, ab iusto, iste
-          nesciunt fugit odit sapiente? Laboriosam praesentium sunt enim
-          similique doloribus.
+          Ready to turn ideas into action? Your thoughts, questions, and
+          collaborations are the spark that ignites innovation. Drop me a line,
+          and lets embark on a journey of creativity, solutions, and meaningful
+          connections. Your email is the key to unlocking endless possibilities
+          - I cant wait to hear from you!
         </p>
         <div className="flex flex-row gap-2">
-          <Link href={"https://www.linkedin.com/in/vitor-rocha-cambui/"}>
+          <Link
+            href={"https://www.linkedin.com/in/vitor-rocha-cambui/"}
+            target="_blank"
+          >
             <Image src={LinkedinIcon} alt={"Linkedin Icon"}></Image>
           </Link>
-          <Link href={"https://github.com/arrooxa"}>
+          <Link href={"https://github.com/arrooxa"} target="_blank">
             <Image src={GithubIcon} alt={"Github Icon"}></Image>
           </Link>
         </div>
       </div>
       <div>
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={handleSubmit}>
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -40,7 +59,7 @@ const EmailSection: React.FC = () => {
             <input
               type="text"
               id="email"
-              required
+              name="email"
               placeholder="steve@jobs.com"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
             />
@@ -55,6 +74,7 @@ const EmailSection: React.FC = () => {
             <input
               type="text"
               id="subject"
+              name="subject"
               required
               placeholder="Just saying hi!"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
@@ -68,10 +88,10 @@ const EmailSection: React.FC = () => {
               Message
             </label>
             <textarea
-              name="message"
               id="message"
+              name="message"
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Let's talk about..."
+              placeholder="Lets talk about..."
             />
           </div>
           <button

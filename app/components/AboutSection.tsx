@@ -1,37 +1,33 @@
 "use client";
 import React, { useState, useTransition } from "react";
 import Image from "next/image";
-import { Tabs, TabsData } from "@app/types/tab";
+import { Tabs, TabsData, skillsTabData } from "@app/types/tab";
 import TabButton from "./TabButton";
 import { getAge } from "@app/utils/getAge";
+import Link from "next/link";
 
 const tabsData: TabsData[] = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul>
-        <li>Node.js</li>
-        <li>React.js</li>
-        <li>Typescript</li>
-        <li>Golang</li>
-        <li>AWS</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="flex flex-col gap-3">
-        <li>
-          Santos College of Technology - Higher Technology Course (HTC) /
-          Systems Analysis and Development
-        </li>
-        <li>
-          USJT - Higher Technology Course (CST) / Systems Analysis and
-          Development
-        </li>
+      <ul className="flex flex-wrap gap-2 items-center">
+        {skillsTabData.map((skill) => (
+          <Link
+            href={skill.website}
+            target="_blank"
+            className="opacity-70 hover:opacity-100 duration-200"
+            key={skill.id}
+          >
+            <Image
+              src={skill.image}
+              width="0"
+              height="0"
+              style={{ width: "100%", height: "50px" }}
+              alt={`${skill.name} icon`}
+            />
+          </Link>
+        ))}
       </ul>
     ),
   },
@@ -59,26 +55,27 @@ const AboutSection = () => {
 
   return (
     <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 items-center py-8 px-4 sm:py-16 xl:px-0">
+      <div className="md:grid md:grid-cols-2 items-center px-4 xl:px-0">
         <Image
           src="/images/333.jpg"
           width={500}
           height={500}
           alt="About Image"
           className="hidden xl:block"
+          priority
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
           <span className="mb-2">Hello there 👋</span>
           <p className="text-base md:text-lg">
-            I'm Vitor Rocha Cambuí, a 22-year-old software developer with a
-            degree in Analysis and Systems Development from the Technology
-            College of Santos. Over the past 4 years, I've focused on Web
-            Development, specializing in Javascript technologies like React.js
-            and Nest.js. In various roles, I've contributed to creating
-            solutions that enhance company revenue by building software aimed at
-            boosting productivity among collaborators and increasing lead
-            generation.
+            I am Vitor Rocha Cambuí, a {getAge()}-year-old software developer
+            with a degree in Analysis and Systems Development from the
+            Technology College of Santos. Over the past 4 years, I have focused
+            on Web Development, specializing in Javascript technologies like
+            React.js and Nest.js. In various roles, I have contributed to
+            creating solutions that enhance company revenue by building software
+            aimed at boosting productivity among collaborators and increasing
+            lead generation.
           </p>
           <div className="flex flex-row mt-8">
             {tabsData.map(({ id, title }) => (
