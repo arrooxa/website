@@ -15,7 +15,7 @@ const Body: React.FC<BodyProps> = ({ children, ...props }: BodyProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="container mt-24 mx-auto px-12 py-4 flex flex-col gap-8 md:gap-16 [&>*:last-child]:mb-16"
+      className="container mt-24 mx-auto px-8 md:px-12 py-4 flex flex-col gap-8 md:gap-16 [&>*:last-child]:mb-16"
       {...props}
     >
       {children}

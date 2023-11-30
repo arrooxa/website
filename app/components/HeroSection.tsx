@@ -1,9 +1,15 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { useInView } from "framer-motion";
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => console.log(isInView), [isInView]);
+
   function handleDownloadResume() {
     const filePath = `/files/resume.pdf`;
 
@@ -27,6 +33,7 @@ const HeroSection = () => {
           </span>
           <br />
           <TypeAnimation
+            ref={ref}
             sequence={[
               "Vitor",
               1000,

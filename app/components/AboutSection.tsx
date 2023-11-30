@@ -23,7 +23,7 @@ const tabsData: TabsData[] = [
               src={skill.image}
               width="0"
               height="0"
-              style={{ width: "100%", height: "50px" }}
+              style={{ width: "50px", height: "50px" }}
               alt={`${skill.name} icon`}
             />
           </Link>
