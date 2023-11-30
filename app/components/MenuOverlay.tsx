@@ -9,9 +9,9 @@ const MenuOverlay: React.FC<{ links: LinkDTO[] }> = ({
 }) => {
   return (
     <ul className="flex flex-col py-4 items-center">
-      {links.map(({ href, title }, index) => (
+      {links.map(({ href, title, targetBlank }, index) => (
         <li key={index}>
-          <NavLink href={href} title={title} />
+          <NavLink href={href} title={title} targetBlank={targetBlank} />
         </li>
       ))}
     </ul>

@@ -2,6 +2,8 @@
 
 import React, { ReactNode } from "react";
 import { MotionProps, motion } from "framer-motion";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface BodyProps extends MotionProps {
   children: ReactNode;
@@ -17,6 +19,7 @@ const Body: React.FC<BodyProps> = ({ children, ...props }: BodyProps) => {
       {...props}
     >
       {children}
+      <ToastContainer theme="light" autoClose={2500} />
     </motion.div>
   );
 };

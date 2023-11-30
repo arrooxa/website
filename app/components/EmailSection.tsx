@@ -5,9 +5,7 @@ import GithubIcon from "@public/images/github-icon.svg";
 import LinkedinIcon from "@public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import sendEmail from "@app/services/sendEmail";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { EmailTemplateDTO } from "@app/types/email";
+import { toast } from "react-toastify";
 
 const EmailSection: React.FC = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -19,8 +17,27 @@ const EmailSection: React.FC = () => {
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/send";
 
-    sendEmail(data);
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    };
+
+    const response = await fetch(endpoint, options);
+
+    if (response.status !== 200) {
+      return toast.error(
+        "Erro ao enviar a mensagem, tente novamente mais tarde."
+      );
+    }
+
+    toast.success("Sua mensagem foi enviada com sucesso!");
+    return setEmailSubmitted(true);
   };
 
   return (
@@ -48,59 +65,67 @@ const EmailSection: React.FC = () => {
         </div>
       </div>
       <div>
-        <form className="flex flex-col" onSubmit={handleSubmit}>
-          <div className="mb-6">
-            <label
-              htmlFor="email"
-              className="mb-2 text-white block text-sm font-medium"
+        {emailSubmitted ? (
+          <p className="text-green-700 font-bold">
+            Sua mensagem foi enviada! Aguarde meu retorno.
+          </p>
+        ) : (
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="mb-2 text-white block text-sm font-medium"
+              >
+                Your email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="steve@jobs.com"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="subject"
+                className="mb-2 text-white block text-sm font-medium"
+              >
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                placeholder="Just saying hi!"
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="mb-2 text-white block text-sm font-medium"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                placeholder="Lets talk about..."
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Your email
-            </label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="steve@jobs.com"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="subject"
-              className="mb-2 text-white block text-sm font-medium"
-            >
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              placeholder="Just saying hi!"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              htmlFor="message"
-              className="mb-2 text-white block text-sm font-medium"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Lets talk about..."
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-          >
-            Send Message
-          </button>
-        </form>
+              Send Message
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );

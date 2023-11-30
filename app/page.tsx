@@ -3,9 +3,9 @@ import EmailSection from "@app/components/EmailSection";
 import Footer from "@app/components/Footer";
 import HeroSection from "@app/components/HeroSection";
 import NavBar from "@app/components/NavBar";
-import ExperienceSection from "./components/ExperienceSection";
-import ProjectSection from "./components/ProjectSection";
-import Body from "./components/Body";
+import ExperienceSection from "@app/components/ExperienceSection";
+import ProjectSection from "@app/components/ProjectSection";
+import Body from "@app/components/Body";
 
 export default function Home() {
   return (

@@ -1,38 +1,16 @@
 import { EmailTemplateDTO } from "@app/types/email";
-import {
-  Html,
-  Body,
-  Head,
-  Preview,
-  Container,
-  Section,
-  Heading,
-  Text,
-  Hr,
-} from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
+import * as React from "react";
 
-const EmailTemplate: React.FC<Readonly<EmailTemplateDTO>> = ({
+export const EmailTemplate: React.FC<Readonly<EmailTemplateDTO>> = ({
   email,
   subject,
   message,
 }) => (
-  <Html>
-    <Head />
-    <Preview>New message from your website!</Preview>
-    <Tailwind>
-      <Body>
-        <Container>
-          <Section>
-            <Heading>You received the following message from: {email}</Heading>
-            <Text>{subject}</Text>
-            <Hr />
-            <Text>{message}</Text>
-          </Section>
-        </Container>
-      </Body>
-    </Tailwind>
-  </Html>
+  <div>
+    <h1>Mensagem de: {email}!</h1>
+    <p>Assunto: {subject} </p>
+    <p>Messagem: {message} </p>
+  </div>
 );
 
 export default EmailTemplate;
