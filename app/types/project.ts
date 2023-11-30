@@ -36,6 +36,7 @@ export const projectsData: ProjectDataDTO[] = [
     image: "images/dogs-project.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/arrooxa/dogs",
+    previewUrl: "https://dogs-npvc8xo3t-arrooxa.vercel.app/",
   },
   {
     id: 1,

@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </Link>
           {previewUrl && (
             <Link
-              href="#"
+              href={previewUrl}
               className="h-14 w-14 border-2 relative rounded-full border-primary-gray hover:border-white group/link"
               target="_blank"
             >

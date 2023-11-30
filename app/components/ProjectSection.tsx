@@ -58,6 +58,7 @@ const ProjectSection: React.FC = () => {
                 description={project.description}
                 image={project.image}
                 gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
               />
             </motion.li>
           ))}
