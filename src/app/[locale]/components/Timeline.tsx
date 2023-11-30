@@ -1,6 +1,9 @@
 import { TimelineProps } from "@app/types/timeline";
+import { useTranslations } from "next-intl";
 
 const Timeline: React.FC<TimelineProps> = ({ timelineInfo }: TimelineProps) => {
+  const t = useTranslations("experience");
+
   return (
     <ol className="border-l-2 border-primary-400 m-5">
       {timelineInfo.map((item, index) => (
@@ -15,10 +18,8 @@ const Timeline: React.FC<TimelineProps> = ({ timelineInfo }: TimelineProps) => {
             </p>
           </div>
           <div className="mb-6 ml-5 pb-6">
-            <p className="text-sm text-primary-400">
-              {item.start} - {item.end ? item.end : "Present"}
-            </p>
-            <p className="mb-4 mt-2 text-primary-gray">{item.content}</p>
+            <p className="text-sm text-primary-400">{t(item.date)}</p>
+            <p className="mb-4 mt-2 text-primary-gray">{t(item.content)}</p>
           </div>
         </li>
       ))}

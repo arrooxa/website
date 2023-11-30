@@ -1,0 +1,57 @@
+{
+  "navLinks": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "code": "Código"
+  },
+  "heroSection": {
+    "greeting": "Olá, eu sou",
+    "description": "Sou um desenvolvedor Full Stack apaixonado, motivado por resolver problemas e enfrentar desafios complexos. Minhas soluções têm desempenhado um papel fundamental na facilitação de transações de milhões de reais no mercado financeiro.",
+    "contactButton": "Entre em contato",
+    "cvButton": "Visualizar CV"
+  },
+  "about": {
+    "aboutMe": "Sobre Mim",
+    "helloThere": "Aoba!",
+    "description": "Meu nome é Vitor Rocha Cambuí, {age} anos, desenvolvedor de software, formado em Análise e Desenvolvimento de Sistemas pela Faculdade de Tecnologia de Santos. Nos últimos 4 anos, tenho focado em Desenvolvimento Web, com especialização em tecnologias Javascript como React.js e Nest.js. Em diversas funções, contribuí para a criação de soluções que aumentam o faturamento da empresa, através da construção de softwares que visam aumentar a produtividade dos funcionários e aumentar a geração de leads.",
+    "skills": "Habilidades",
+    "certifications": "Certificações"
+  },
+  "experience": {
+    "experienceTitle": "Experiência",
+    "educationTitle": "Educação",
+    "igcDate": "Jul 2022 - Nov 2023",
+    "igcContent": "O IGC é a maior empresa de M&A (Fusões e Aquisições) da América Latina e uma potência no mercado financeiro global, competindo frente a frente com grandes bancos. Com um setor de tecnologia recém-criado, contribuí com a formação de novos profissionais, gestão de equipes e desenvolvimento de CRMs internos que gerenciavam processos financeiros envolvendo centenas de milhões de reais.",
+    "hasteDate": "Abr 2021 - Jun 2022",
+    "hasteContent": "Haste Design era uma software house combinada com um estúdio de design onde todos os aspectos do desenvolvimento de software eram resolvidos. Minha função foi participar desses projetos desde a arquitetura até o deploy, e aprendi muito não só em codificação, mas também em infraestrutura. Infelizmente, a empresa encerrou suas operações.",
+    "virtuesDate": "Jan 2021 - Abr 2021",
+    "virtuesContent": "A Virtues era uma empresa de desenvolvimento de aplicativos móveis com foco em emissoras de rádio. Fui contratado para desenvolver o site da empresa porque ele estava bastante desatualizado e com funcionalidades desatualizadas. Adicionalmente, iniciei a criação de uma extensão de navegador para reprodução de rádio",
+    "usjtDate": "Jan 2023 - Dez 2023",
+    "usjtContent": "O que eu aprendi: React.js | Microsserviços | Express.js | Node.js | Python",
+    "fatecDate": "Jan 2020 - Dez 2022",
+    "fatecContent": "O que eu aprendi: Estrutura de Dados | Algoritmos | Programação Orientada a Objetos | C | Programação Funcional | SQL"
+  },
+  "projects": {
+    "projectsTitle": "Projetos",
+    "all": "Todos",
+    "web": "Web",
+    "mobile": "Mobile",
+    "dogsDescription": "Uma rede social mas apenas para cachorros",
+    "geniusDescription": "Aplicativo Mobile para jogar Genius",
+    "discordDescription": "Bot do Discord para gerenciar servidores",
+    "exchangeDescription": "API baseada em Web Scraping para obter a cotação das moedas mundiais"
+  },
+  "contact": {
+    "contactDescription": "Pronto para transformar ideias em ação? Seus pensamentos, perguntas e colaborações são a centelha que acende a inovação. Escreva-me e vamos embarcar em uma jornada de criatividade, soluções e conexões significativas. Seu e-mail é a chave para desbloquear possibilidades infinitas - mal posso esperar para ouvir sua opinião!",
+    "emailLabel": "Seu email",
+    "subjectLabel": "Assunto",
+    "subjectPlaceholder": "Apenas mandando um oi!",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Vamos falar sobre...",
+    "submitButton": "Enviar mensagem"
+  },
+  "footer": {
+    "allRights": "Todos os direitos reservados."
+  }
+}

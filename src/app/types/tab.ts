@@ -5,11 +5,10 @@ import typescriptIcon from "@public/images/typescript-icon.png";
 import golangIcon from "@public/images/golang-icon.svg";
 import awsIcon from "@public/images/aws-icon.png";
 
-export type Tabs = "Skills" | "Education" | "Certifications";
+export type Tabs = "skills" | "education" | "certifications";
 
 export interface TabsData {
-  title: Tabs;
-  id: Lowercase<Tabs>;
+  id: Tabs;
   content: React.ReactNode;
 }
 

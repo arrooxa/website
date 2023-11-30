@@ -6,19 +6,19 @@ export interface LinkDTO {
 
 export const navLinks: LinkDTO[] = [
   {
-    title: "About",
+    title: "about",
     href: "#about",
   },
   {
-    title: "Projects",
+    title: "projects",
     href: "#projects",
   },
   {
-    title: "Contact",
+    title: "contact",
     href: "#contact",
   },
   {
-    title: "Code",
+    title: "code",
     href: "https://github.com/arrooxa/website",
     targetBlank: true,
   },

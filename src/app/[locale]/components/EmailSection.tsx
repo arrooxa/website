@@ -6,9 +6,11 @@ import LinkedinIcon from "@public/images/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
 
 const EmailSection: React.FC = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const t = useTranslations("contact");
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -46,11 +48,7 @@ const EmailSection: React.FC = () => {
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">Lets Connect!</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Ready to turn ideas into action? Your thoughts, questions, and
-          collaborations are the spark that ignites innovation. Drop me a line,
-          and lets embark on a journey of creativity, solutions, and meaningful
-          connections. Your email is the key to unlocking endless possibilities
-          - I cant wait to hear from you!
+          {t("contactDescription")}
         </p>
         <div className="flex flex-row gap-2">
           <Link
@@ -76,7 +74,7 @@ const EmailSection: React.FC = () => {
                 htmlFor="email"
                 className="mb-2 text-white block text-sm font-medium"
               >
-                Your email
+                {t("emailLabel")}
               </label>
               <input
                 type="email"
@@ -92,14 +90,14 @@ const EmailSection: React.FC = () => {
                 htmlFor="subject"
                 className="mb-2 text-white block text-sm font-medium"
               >
-                Subject
+                {t("subjectLabel")}
               </label>
               <input
                 type="text"
                 id="subject"
                 name="subject"
                 required
-                placeholder="Just saying hi!"
+                placeholder={t("subjectPlaceholder")}
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               />
             </div>
@@ -108,21 +106,21 @@ const EmailSection: React.FC = () => {
                 htmlFor="message"
                 className="mb-2 text-white block text-sm font-medium"
               >
-                Message
+                {t("messageLabel")}
               </label>
               <textarea
                 id="message"
                 name="message"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Lets talk about..."
+                placeholder={t("messagePlaceholder")}
               />
             </div>
             <button
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Send Message
+              {t("submitButton")}
             </button>
           </form>
         )}

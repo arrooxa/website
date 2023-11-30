@@ -1,0 +1,57 @@
+{
+  "navLinks": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "code": "Code"
+  },
+  "heroSection": {
+    "greeting": "Hello, I am",
+    "description": "I am a passionate Full Stack developer driven by solving problems and tackling complex challenges. My solutions have played a pivotal role in facilitating transactions worth millions of Brazilian reais in the financial market.",
+    "contactButton": "Get in touch",
+    "cvButton": "Download CV"
+  },
+   "about": {
+    "aboutMe": "About Me",
+    "helloThere": "Hello there!",
+    "description": "My name is Vitor Rocha Cambuí, {age} years old, software developer, graduated in Systems Analysis and Development from the Faculty of Technology of Santos. For the last 4 years, I have focused on Web Development, specializing in Javascript technologies such as React.js and Nest.js. In several roles, I contributed to the creation of solutions that increase the company's revenue, through the construction of software that aims to increase employee productivity and increase lead generation.",
+    "skills": "Skills",
+    "certifications": "Certifications"
+  },
+  "experience": {
+    "experienceTitle": "Experience",
+    "educationTitle": "Education",
+    "igcDate": "Jul 2022 - Nov 2023",
+    "igcContent": "IGC is the largest M&A (Mergers and Acquisitions) company in Latin America and a powerhouse in the global financial market, competing head-to-head with major banks. With a recently established technology sector, I contributed by training new professionals, managing teams, and developing internal CRMs that managed financial processes involving hundreds of millions of Brazilian reais.",
+    "hasteDate": "Apr 2021 - Jun 2022",
+    "hasteContent": "Haste Design was a software house combined with a design studio where all aspects of software development were solved. My role was to participate in these projects from architecture to deployment, and I learned a lot not only in coding but also in infrastructure. Unfortunately, the company has ceased its operations.",
+    "virtuesDate": "Jan 2021 - Apr 2021",
+    "virtuesContent": "Virtues was a mobile app development company with a focus on radio stations. I was hired to develop the company's website because it was quite outdated with outdated features. Additionally, I initiated the creation of a browser extension for radio playback.",
+    "usjtDate": "Jan 2023 - Dec 2023",
+    "usjtContent": "What I have learned: React.js | Microservices | Express.js | Node.js | Python",
+    "fatecDate": "Jan 2020 - Dec 2022",
+    "fatecContent": "What I have learned: Data Structure | Algorithms | Object-Oriented Programming | C | Functional Programming | SQL"
+  },
+  "projects": {
+    "projectsTitle": "Projects",
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
+    "dogsDescription": "Social Network instagram-based for Dogs",
+    "geniusDescription": "Mobile app to play the Genius game",
+    "discordDescription": "Bot for Discord to manage servers",
+    "exchangeDescription": "API based on Web Scraping to obtain the exchange rate of world currencies"
+  },
+  "contact": {
+    "contactDescription": "Ready to turn ideas into action? Your thoughts, questions, and collaborations are the spark that ignites innovation. Drop me a line, and lets embark on a journey of creativity, solutions, and meaningful connections. Your email is the key to unlocking endless possibilities - I cant wait to hear from you!",
+    "emailLabel": "Your email",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Just saying hi!",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Lets talk about...",
+    "submitButton": "Send Message"
+  },
+  "footer": {
+    "allRights": "All rights reserved."
+  }
+}

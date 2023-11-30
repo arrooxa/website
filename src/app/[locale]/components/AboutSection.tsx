@@ -5,10 +5,10 @@ import { Tabs, TabsData, skillsTabData } from "@app/types/tab";
 import TabButton from "./TabButton";
 import { getAge } from "@app/utils/getAge";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const tabsData: TabsData[] = [
   {
-    title: "Skills",
     id: "skills",
     content: (
       <ul className="flex flex-wrap gap-2 items-center">
@@ -32,7 +32,6 @@ const tabsData: TabsData[] = [
     ),
   },
   {
-    title: "Certifications",
     id: "certifications",
     content: (
       <ul>
@@ -46,6 +45,7 @@ const tabsData: TabsData[] = [
 const AboutSection = () => {
   const [tab, setTab] = useState<Lowercase<Tabs>>("skills");
   const [isPending, startTransition] = useTransition();
+  const t = useTranslations("about");
 
   function handleChangeTab(id: Lowercase<Tabs>) {
     startTransition(() => {
@@ -65,26 +65,19 @@ const AboutSection = () => {
           priority
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About me</h2>
-          <span className="mb-2">Hello there 👋</span>
+          <h2 className="text-4xl font-bold text-white mb-4">{t("aboutMe")}</h2>
+          <span className="mb-2">{t("helloThere")} 👋</span>
           <p className="text-base md:text-lg">
-            I am Vitor Rocha Cambuí, a {getAge()}-year-old software developer
-            with a degree in Analysis and Systems Development from the
-            Technology College of Santos. Over the past 4 years, I have focused
-            on Web Development, specializing in Javascript technologies like
-            React.js and Nest.js. In various roles, I have contributed to
-            creating solutions that enhance company revenue by building software
-            aimed at boosting productivity among collaborators and increasing
-            lead generation.
+            {t("description", { age: getAge() })}
           </p>
           <div className="flex flex-row mt-8">
-            {tabsData.map(({ id, title }) => (
+            {tabsData.map(({ id }) => (
               <TabButton
                 selectTab={() => handleChangeTab(id)}
                 active={tab === id}
                 key={id}
               >
-                {title}
+                {t(id)}
               </TabButton>
             ))}
           </div>

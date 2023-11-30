@@ -8,7 +8,7 @@ interface ProjectDataDTO {
   previewUrl?: string;
 }
 
-export type ProjectTags = "All" | "Web" | "Mobile";
+export type ProjectTags = "all" | "web" | "mobile";
 
 export type ProjectCardProps = Omit<ProjectDataDTO, "id" | "tag">;
 
@@ -32,35 +32,34 @@ export const projectsData: ProjectDataDTO[] = [
   {
     id: 0,
     title: "Dogs",
-    description: "Social Network instagram-based for Dogs",
+    description: "dogsDescription",
     image: "images/dogs-project.png",
-    tag: ["All", "Web"],
+    tag: ["all", "web"],
     gitUrl: "https://github.com/arrooxa/dogs",
     previewUrl: "https://dogs-npvc8xo3t-arrooxa.vercel.app/",
   },
   {
     id: 1,
     title: "Genius App",
-    description: "Mobile app to play the genius game",
+    description: "geniusDescription",
     image: "images/genius.jpg",
-    tag: ["All", "Mobile"],
+    tag: ["all", "mobile"],
     gitUrl: "https://github.com/arrooxa/geniusapp",
   },
   {
     id: 3,
     title: "Discord Bot",
-    description: "Bot for Discord to manage servers",
+    description: "discordDescription",
     image: "images/discord-bot.png",
-    tag: ["All", "Web"],
+    tag: ["all", "web"],
     gitUrl: "https://github.com/arrooxa/discord-bot",
   },
   {
     id: 4,
     title: "Exchange Rate API",
-    description:
-      "API based on web scraping to obtain the exchange rate of some currencies",
+    description: "exchangeDescription",
     image: "images/exchange-rate.jpg",
-    tag: ["All", "Web"],
+    tag: ["all", "web"],
     gitUrl: "https://github.com/arrooxa/discord-bot",
   },
 ];

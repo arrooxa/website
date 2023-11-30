@@ -1,8 +1,7 @@
 export interface TimelineDTO {
   title: string;
   subtitle?: string;
-  start: string;
-  end: string | null;
+  date: string;
   content: string;
 }
 

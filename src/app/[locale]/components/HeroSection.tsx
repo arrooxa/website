@@ -1,14 +1,11 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import { useInView } from "framer-motion";
 
 const HeroSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  useEffect(() => console.log(isInView), [isInView]);
+  const t = useTranslations("heroSection");
 
   function handleDownloadResume() {
     const filePath = `/files/resume.pdf`;
@@ -29,11 +26,10 @@ const HeroSection = () => {
       <div className="col-span-7 place-self-center text-center sm:text-left">
         <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-            Hello, I am
+            {t("greeting")}
           </span>
           <br />
           <TypeAnimation
-            ref={ref}
             sequence={[
               "Vitor",
               1000,
@@ -50,24 +46,21 @@ const HeroSection = () => {
           />
         </h1>
         <p className="text-primary-gray mb-6 text-base sm:text-lg lg:text-xl">
-          I am a passionate Full Stack developer driven by solving problems and
-          tackling complex challenges. My solutions have played a pivotal role
-          in facilitating transactions worth millions of Brazilian reais in the
-          financial market.
+          {t("description")}
         </p>
         <div>
           <a
             className="block md:inline-block px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             href="#contact"
           >
-            Get in touch
+            {t("contactButton")}
           </a>
           <button
             className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             onClick={handleDownloadResume}
           >
             <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-              Download CV
+              {t("cvButton")}
             </span>
           </button>
         </div>

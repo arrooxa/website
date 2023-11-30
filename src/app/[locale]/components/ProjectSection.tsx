@@ -5,9 +5,12 @@ import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { useRef, useState } from "react";
 import { Variants, motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const ProjectSection: React.FC = () => {
-  const [tag, setTag] = useState<ProjectTags>("All");
+  const t = useTranslations("projects");
+
+  const [tag, setTag] = useState<ProjectTags>("all");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -23,23 +26,23 @@ const ProjectSection: React.FC = () => {
   return (
     <section>
       <h2 className="text-center text-4xl font-bold text-white" id="projects">
-        Projects
+        {t("projectsTitle")}
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
-          title="All"
+          title="all"
           onClick={handleTagChange}
-          isSelected={tag === "All"}
+          isSelected={tag === "all"}
         />
         <ProjectTag
-          title="Web"
+          title="web"
           onClick={handleTagChange}
-          isSelected={tag === "Web"}
+          isSelected={tag === "web"}
         />
         <ProjectTag
-          title="Mobile"
+          title="mobile"
           onClick={handleTagChange}
-          isSelected={tag === "Mobile"}
+          isSelected={tag === "mobile"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
@@ -55,7 +58,7 @@ const ProjectSection: React.FC = () => {
             >
               <ProjectCard
                 title={project.title}
-                description={project.description}
+                description={t(project.description)}
                 image={project.image}
                 gitUrl={project.gitUrl}
                 previewUrl={project.previewUrl}
